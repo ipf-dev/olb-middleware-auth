@@ -1,0 +1,8 @@
+spring:
+    profiles:
+        active: local
+---
+spring:
+  config:
+      activate:
+        on-profile: local # application-local.yml 과 동일한 역할
