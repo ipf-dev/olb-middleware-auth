@@ -3,6 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.0.1"
 	id("io.spring.dependency-management") version "1.1.0"
+
+    // Common tools for collaboration
+	id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
+    id("io.gitlab.arturbosch.detekt") version "1.14.2"
+
 	kotlin("jvm") version "1.7.22"
 	kotlin("plugin.spring") version "1.7.22"
 }
@@ -32,4 +37,9 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+detekt {
+    toolVersion = "1.14.2"
+    config = files("$rootDir/detekt.yml")
 }

@@ -1,0 +1,111 @@
+build:
+    maxIssues: 0
+
+config:
+    validation: true
+    warningsAsErrors: true
+
+output-reports:
+    active: true
+    exclude:
+        - 'TxtOutputReport'
+        - 'XmlOutputReport'
+
+complexity:
+    active: true
+    ComplexCondition:
+        active: true
+        threshold: 4
+    ComplexInterface:
+        active: false
+        threshold: 10
+        includeStaticDeclarations: false
+        includePrivateDeclarations: false
+    ComplexMethod:
+        active: true
+        threshold: 15
+        ignoreSingleWhenExpression: false
+        ignoreSimpleWhenEntries: false
+        ignoreNestingFunctions: false
+        nestingFunctions:
+            - 'also'
+            - 'apply'
+            - 'forEach'
+            - 'isNotNull'
+            - 'ifNull'
+            - 'let'
+            - 'run'
+            - 'use'
+            - 'with'
+    LargeClass:
+        active: true
+        threshold: 500
+    LongMethod:
+        active: true
+        threshold: 80
+    LongParameterList:
+        active: true
+        functionThreshold: 10
+        constructorThreshold: 30
+        ignoreDefaultParameters: false
+        ignoreDataClasses: true
+    NestedBlockDepth:
+        active: true
+        threshold: 4
+    TooManyFunctions:
+        active: true
+        thresholdInFiles: 20
+        thresholdInClasses: 15
+        thresholdInInterfaces: 15
+        thresholdInObjects: 15
+        thresholdInEnums: 5
+        ignoreDeprecated: true
+        ignorePrivate: true
+        ignoreOverridden: false
+
+exceptions:
+    SwallowedException:
+        active: true
+        ignoredExceptionTypes: [ 'InterruptedException', 'MalformedURLException', 'NumberFormatException', 'ParseException', 'EntityNotFoundException' ]
+    TooGenericExceptionCaught:
+        exceptionNames: [ 'ArrayIndexOutOfBoundsException', 'Error', 'Exception', 'IllegalMonitorStateException', 'IndexOutOfBoundsException', 'NullPointerException', 'RuntimeException', 'Throwable' ]
+
+empty-blocks:
+    active: true
+    EmptyClassBlock:
+        active: false
+    EmptyFunctionBlock:
+        active: false
+    EmptyKtFile:
+        active: false
+
+naming:
+    active: true
+    BooleanPropertyNaming:
+        active: true
+    NonBooleanPropertyPrefixedWithIs:
+        active: true
+    FunctionNaming:
+        excludeClassPattern: '[a-zA-Z]*Repository$'
+    ConstructorParameterNaming:
+        excludeClassPattern: 'UserVo|Notification|BookCipher'
+
+performance:
+    active: true
+    SpreadOperator:
+        active: false
+
+potential-bugs:
+    active: true
+    HasPlatformType:
+        active: true
+
+formatting:
+    active: true
+    MaximumLineLength:
+        maxLineLength: 180
+    ImportOrdering:
+        active: false
+
+style:
+    active: false
