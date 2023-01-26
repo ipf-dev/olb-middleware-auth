@@ -7,14 +7,14 @@ import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.test.context.ActiveProfiles
 
 @SpringBootTest
-@ActiveProfiles("local")
+@ActiveProfiles("\${spring.profiles.active}")
 class RedisConfigTest {
 
     @Autowired
     lateinit var redisTemplate: RedisTemplate<String, String>
 
     @Test
-    fun `Test Redis Connection`() {
+    fun `Redis 연동 테스트`() {
         val ping = redisTemplate.execute { it.ping() }
         assert("PONG" == ping)
     }
