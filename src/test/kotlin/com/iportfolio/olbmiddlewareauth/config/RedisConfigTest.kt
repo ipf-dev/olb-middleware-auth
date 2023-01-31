@@ -7,7 +7,7 @@ import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.test.context.ActiveProfiles
 
 @SpringBootTest
-@ActiveProfiles("\${spring.profiles.active}")
+@ActiveProfiles("local")
 class RedisConfigTest {
 
     @Autowired
