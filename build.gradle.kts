@@ -29,10 +29,14 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
-    testImplementation("junit:junit:4.13")
 
-    // redis
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
+    implementation("io.jsonwebtoken:jjwt:0.9.1")
+
+    // For TEST
+    testImplementation("junit:junit:4.13.1")
+    implementation("javax.xml.bind:jaxb-api:2.3.1")
 }
 
 tasks.withType<KotlinCompile> {
